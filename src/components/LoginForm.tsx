@@ -32,7 +32,7 @@ export default function LoginForm({accounts, setAccounts, user, setUser}:any) {
             router.push('/conversations')  // Navigate to conversations page
         }
         else {
-            console.log("account doesn't exist!")
+            console.log("account doesn't exist!",username, pin)
             alert("Invalid username or PIN!")  
         }
     }
