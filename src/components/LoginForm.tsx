@@ -13,7 +13,7 @@ export default function LoginForm({accounts, setAccounts, user, setUser}:any) {
         const newAccount:Account = {
             username:username,
             pin:pin,
-            conversations:[]
+            conversations:[],
         }
         console.log(newAccount)
         setAccounts([...accounts,newAccount])
