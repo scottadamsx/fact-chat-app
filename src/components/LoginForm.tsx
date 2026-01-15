@@ -25,7 +25,7 @@ export default function LoginForm({accounts, setAccounts, user, setUser}:any) {
     
     // handle login logic
     function login() {
-        let account:Account = accounts.find((account:Account) => {account.username === username && pin === account.username})
+        let account:Account = accounts.find((account:Account) => account.username === username && pin === account.pin)
         if (account) {
             console.log("account exists!")
             setUser(account)  // Set the logged-in user
