@@ -25,11 +25,12 @@ export default function ConvoBox({user, conversation, accounts, setAccounts, set
             <h3 className="font-bold text-lg mb-2">
                 {conversation ? `Chat with ${conversation.accounts.find((acc:Account) => acc.username !== user.username)?.username}` : 'Select a conversation'}
             </h3>
-            <div className="flex-1 border rounded p-2 overflow-y-auto bg-white mb-2">
+            <div className="flex flex-col border rounded p-2 overflow-y-scroll bg-white mb-2 h-96 justify-end">
                 {conversation ? (
                     conversation.messages.length === 0 ? (
                         <p className="text-gray-500">No messages yet</p>
                     ) : (
+                        // map the messages and display them 
                         conversation.messages.map((msg: Message, index: number) => (
                             <div key={index} className={`mb-2 ${msg.sender.username === user.username ? 'text-right' : 'text-left'}`}>
                                 <div className={`inline-block p-2 rounded ${msg.sender.username === user.username ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}>
@@ -44,6 +45,7 @@ export default function ConvoBox({user, conversation, accounts, setAccounts, set
                 )}
             </div>
             {conversation && (
+                // Send a bew message container 
                 <div className="flex gap-2">
                     <input
                         type="text"

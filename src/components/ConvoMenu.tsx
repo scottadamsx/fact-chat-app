@@ -15,7 +15,7 @@ export default function ConvoMenu({ user, accounts, setAccounts, setUser }: any)
 
     return (
         <>
-        <div className="flex gap-4 p-4">
+        <div className="flex gap-4 p-4 bg-green-200">
             {/* Conversation list */}
             <div className="w-64 space-y-2">
                 <h3 className="font-bold text-lg mb-2">Your Conversations</h3>
